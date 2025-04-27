@@ -40,6 +40,9 @@ function Layouts () {
     const [isOpen, setIsOpen] = useState(true);
     const toggleMenu = () => setIsOpen(!isOpen);
 
+    // Componete para visulizar la informacion de usuario
+    const [info, setInfo] = useState(false); 
+
     // Componente del menu de opciones
     const [Open, setOpen] = useState(false);
     const menuRef = useRef(null);
@@ -91,6 +94,7 @@ function Layouts () {
 
     return (
         <div className='flex flex-col h-screen'>
+            
             {/* Barra de navegación */}
             <div className='w-full relative flex justify-between items-center px-10 py-5 bg-[#ECF8F3]'>
                 <div className='flex items-center gap-4'>
@@ -120,7 +124,7 @@ function Layouts () {
                         </button>
 
                         {/* Botón Mi Perfil */}
-                        <li onClick={togglesubmenu}
+                        <li onClick={() => setInfo(false)}
                             className="w-44 relative flex items-center px-5 py-2 rounded-lg hover:bg-[#65c3A1] cursor-pointer gap-3 ml-2"> 
                             <img className='w-7 h-7 rounded-full' src={preview} alt="" /> 
                             Mi Perfil 
